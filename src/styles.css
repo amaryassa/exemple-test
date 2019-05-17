@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: scrollbar;
+  position: relative;
+  max-width: 100%;
+  transition: none;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+@media (max-width: 499px) {
+  html {
+      font-size: 11px;
+  }
+}
+@media (min-width: 500px) {
+  html {
+      font-size: 12px;
+  }
+}
+@media (min-width: 624px) {
+  html {
+      font-size: 12.5px;
+  }
+}
+
+@media (min-width: 702px) {
+  html {
+      font-size: 13px;
+  }
+}
+@media (min-width: 780px) {
+  html {
+      font-size: 14px;
+  }
+}
+@media (min-width: 858px) {
+  html {
+      font-size: 15px;
+  }
+}
+
+
+body {
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  max-width: 100%;
+  transition: none;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: 1rem;
+  height: auto;
+  font-size: 100%;
+}
+p, form,input ,img, figure ,div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, blockquote, th, td{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto",Arial,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: inherit;
+  text-rendering: optimizeLegibility;
+}
+
+
+button, input, optgroup, select, textarea {
+  font-family: "Roboto",Arial,sans-serif;
+}
+
+.Aligner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-wrapper{
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 .625rem;
+  overflow: hidden;
+}
