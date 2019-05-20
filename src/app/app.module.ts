@@ -8,6 +8,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './articles/article/article.component';
 import { MaintenanceProductsComponent } from './maintenance-products/maintenance-products.component';
 import { MaintenanceProductComponent } from './maintenance-products/maintenance-product/maintenance-product.component';
+import { AproposComponent } from './apropos/apropos.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MaintenanceProductComponent } from './maintenance-products/maintenance-
     ArticleComponent,
     ArticlesComponent,
     MaintenanceProductsComponent,
-    MaintenanceProductComponent
+    MaintenanceProductComponent,
+    AproposComponent
   ],
   imports: [
     BrowserModule
