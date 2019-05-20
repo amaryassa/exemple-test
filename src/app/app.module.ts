@@ -9,6 +9,12 @@ import { ArticleComponent } from './articles/article/article.component';
 import { MaintenanceProductsComponent } from './maintenance-products/maintenance-products.component';
 import { MaintenanceProductComponent } from './maintenance-products/maintenance-product/maintenance-product.component';
 import { AproposComponent } from './apropos/apropos.component';
+import { SliderComponent } from './slider/slider.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 
 @NgModule({
   declarations: [
@@ -19,10 +25,13 @@ import { AproposComponent } from './apropos/apropos.component';
     ArticlesComponent,
     MaintenanceProductsComponent,
     MaintenanceProductComponent,
-    AproposComponent
+    AproposComponent,
+    SliderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    SlickCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,27 @@
+<ngx-slick-carousel class="carousel"
+  #slickModal="slick-carousel"
+  [config]="slideConfig"
+  >
+<div ngxSlickItem *ngFor="let slide of slides" class="slide">
+
+<div class="slider-desc">
+  <p class="slider-desc_text">{{ slide.text }}.</p>
+  <div class="slider-desc_more-info btn">more info</div>
+</div>
+<picture>
+  <img src="{{ slide.img }}" alt="" >
+</picture>
+</div>
+</ngx-slick-carousel>
+
+<!-- <button (click)="addSlide()">Add</button>
+<button (click)="removeSlide()">Remove</button>
+<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+<button (click)="slickModal.unslick()">unslick</button>
+
+
+(init)="slickInit($event)"
+  (breakpoint)="breakpoint($event)"
+  (afterChange)="afterChange($event)"
+  (beforeChange)="beforeChange($event)"
+-->
