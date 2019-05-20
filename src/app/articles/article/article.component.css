@@ -154,22 +154,9 @@ justify-content: flex-start;
   justify-content: flex-end;
 }
 .article_infos_read-more .btn {
-  display: inline-block;
-  font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  background-color: transparent;
-  border: 1px solid transparent;
-  padding: .575rem .85rem;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  border-radius: 2.25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
-  text-transform: capitalize;
-  cursor: pointer;
 }
 
 .article_infos_read-more .btn:hover {
