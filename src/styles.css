@@ -16,6 +16,9 @@ html {
   font-size: 16px;
 }
 
+/* les media query ici pour le HTML servent plus à utiliser l'unité de font-size rem au lieu de px
+pour nous aider à faire moins de changement de font-size lorsqu'on change d'écran  */
+
 @media (max-width: 499px) {
   html {
       font-size: 11px;
@@ -60,12 +63,16 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: Helvetica Neue, Helvetica, sans-serif;
+  /* font-family: Helvetica Neue, Helvetica, sans-serif; */
   font-weight: 300;
   line-height: 1rem;
   height: auto;
   font-size: 100%;
+
+
+  background-color: #eef2ee30;
 }
+/* supprimer les valeur par défauts */
 p, form,input ,img, figure ,div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, blockquote, th, td{
   margin: 0;
   padding: 0;
@@ -91,6 +98,7 @@ button, input, optgroup, select, textarea {
     flex-wrap: wrap;
 }
 
+
 .main-wrapper{
   width: 100%;
   max-width: 1600px;
@@ -98,3 +106,16 @@ button, input, optgroup, select, textarea {
   padding: 0 .625rem;
   overflow: hidden;
 }
+
+
+picture img {
+  object-fit: contain;
+  text-indent: -9999px;
+  overflow: hidden;
+  height: auto;
+  display: block;
+  margin: auto!important;
+  max-width: 100%;
+  height: auto;
+}
+

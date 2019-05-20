@@ -1,0 +1,15 @@
+.content-articles{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.articles-title{
+  font-size: 3rem;
+  padding: 3rem .7rem;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  line-height: 3rem;
+  text-transform: uppercase;
+}
