@@ -1,0 +1,100 @@
+.rs_grid{
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3rem 0 0 0;
+}
+
+@media (min-width: 600px){
+  .rs_grid{
+  grid-template-columns: 1fr 2fr 1fr;
+  }
+}
+
+
+.rs_instagram{
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 3rem 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.instagram_title{
+  grid-column: 1/-1;
+}
+.rs_twitter, .rs_last-tweet, .rs_facebook {
+  padding: 2rem 2rem 0rem 2rem;
+}
+.rs_twitter, .rs_facebook{
+  text-align: center;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: #fff;
+}
+
+
+.rs_twitter{
+  background-color: #1da1f2;
+}
+
+
+
+.rs_facebook{
+  background-color: #3c5a99;
+}
+
+
+.rs_name, .rs_hash{ margin-top: .5rem;
+  font-size: 1.5rem;}
+
+  @media (max-width: 601px){
+    .rs_last-tweet{
+      grid-column: 1/-1;
+      grid-row: 1;
+    }
+  }
+
+  .tweet_title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #878484;
+    padding-bottom: .8rem  ;
+}
+.tweet_content {
+  font-size: 2rem;
+  line-height: 2rem;
+  padding-bottom: 2rem  ;
+}
+.hashtag{
+  color: #f21313eb;
+}
+
+.tweet-info{
+  position: relative;
+}
+
+.tweet-info_name {
+  font-size: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+.tweet-info_time {
+  color: #878484;
+  padding-bottom: .3rem;
+}
+.tweet-info_btn{
+  position: absolute;
+  right: 1rem;
+  top: .5rem;
+  border: 1px solid #cfcece;
+  overflow: hidden;
+}
+.tweet-info_prev{
+  padding: 1rem;
+  border-right: .5px solid #cdcccc;
+}
+.tweet-info_next{
+  padding: 1rem;
+  border-left: .5px solid #cdcccc;
+}

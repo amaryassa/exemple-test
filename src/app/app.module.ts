@@ -14,6 +14,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { FeaturedProductsComponent } from './featured-products/featured-products.component';
+import { FeaturedProductComponent } from './featured-products/featured-product/featured-product.component';
+import { ReseauSocialComponent } from './reseau-social/reseau-social.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 
 @NgModule({
@@ -26,7 +30,11 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     MaintenanceProductsComponent,
     MaintenanceProductComponent,
     AproposComponent,
-    SliderComponent
+    SliderComponent,
+    FeaturedProductsComponent,
+    FeaturedProductComponent,
+    ReseauSocialComponent,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule,

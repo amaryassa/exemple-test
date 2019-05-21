@@ -1,0 +1,22 @@
+.featured-prod-content{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+.prod-top {
+grid-column: span 2;
+grid-row: 1;
+}
+.prod-right {
+  grid-column: span 1;
+  grid-row: span 2
+}
+.prod-bottom-left{
+  grid-column: span 1;
+}
+.prod-bottom-right{
+  grid-column: span 1;
+}
+
+
