@@ -145,7 +145,10 @@ picture img {
   /* color: red; */
   z-index: 100;
 }
-.slick-next {
+.slick-next, .slick-prev {
+  z-index: 100;
+}
+.slick-next{
   right: 4rem !important;
 }
 

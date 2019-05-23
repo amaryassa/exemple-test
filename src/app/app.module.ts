@@ -19,6 +19,8 @@ import { FeaturedProductComponent } from './featured-products/featured-product/f
 import { ReseauSocialComponent } from './reseau-social/reseau-social.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
     BrowserModule,
     BrowserAnimationsModule,
     SlickCarouselModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

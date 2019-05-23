@@ -1,8 +1,8 @@
 <nav class="header">
   <div class="header_icon search"><i class="fas fa-search"></i></div>
   <div class="header_icon bars"><i class="fas fa-bars"></i> <span class="bars_title no-visible-mobile">Shop <br> Category</span></div>
-  <div class="header_logo"><h1 class="logo_title">bicycle company</h1></div>
+  <div class="header_logo"><h1 class="logo_title">{{header?.title || defaultValue.title}} </h1></div>
   <div class="header_icon no-visible-mobile"><i class="fas fa-user"></i></div>
-  <div class="header_icon wishlist"> <i class="badge far fa-heart" data-count="3"></i></div>
-  <div class="header_icon"><i class="badge fas fa-shopping-cart" data-count="5"></i></div>
+  <div class="header_icon wishlist"> <i class="badge far fa-heart" [attr.data-count]="header?.whishList || defaultValue.whishList"></i></div>
+  <div class="header_icon"><i class="badge fas fa-shopping-cart" [attr.data-count]="header?.shopping || defaultValue.shopping"></i></div>
 </nav>

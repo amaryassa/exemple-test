@@ -1,24 +1,19 @@
 <div class="apropos">
   <div class="apropos_text">
-    <h2 class="apropos_text_title">who we are</h2>
+    <h2 class="apropos_text_title">{{about?.title || defaultValue.title}}</h2>
     <div class="apropos_text_desc">
       <p>
-          Lorem ipsum, dolor sit amet consectetur
-          adipisicing elit. Doloribus non molestias fugiat et omnis minus vitae,
-          minima sapiente. Corrupti ab ducimus odit adipisci. Molestias, numquam,
-          quisquam tenetur eos rem explicabo voluptatem nemo nam libero magnam,
-          delectus dolore minima! Blanditiis, magnam illum accusantium
-          sit laborum aperiam qui recusandae itaque ab ullam.
+        {{about?.description || defaultValue.description}}
       </p>
     </div>
-    <div class="apropos_text_more-info btn">more info</div>
+    <div class="apropos_text_more-info btn">{{about?.button || defaultValue.button}}</div>
   </div>
   <div class="apropos_img-content">
     <div class="apropos_img_image-1">
-      <picture><img src="https://www.decofinder.com/i/une/Promotion/28693956.jpg" alt=""></picture>
+      <picture><img src="{{about?.image1 || defaultValue.image1}}" alt=""></picture>
     </div>
     <div class="apropos_img_image-2">
-      <picture><img src="https://www.decofinder.com/i/une/CoupDeCoeur/28693955.jpg" alt=""></picture>
+      <picture><img src="{{about?.image2 || defaultValue.image2}}" alt=""></picture>
     </div>
   </div>
 </div>

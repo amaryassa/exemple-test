@@ -1,3 +1,4 @@
+import { HeaderService } from './../../services/header.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public defaultValue = {
+    "title": "titre Site",
+   "whishList": 0,
+    "shopping": 0
+  }
 
+  public header: any = [];
+  constructor(private _headerService: HeaderService) { }
   ngOnInit() {
+    this._headerService.getHeader().subscribe(data => {
+      this.header = data;
+      });
   }
 
 }
