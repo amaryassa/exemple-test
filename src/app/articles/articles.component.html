@@ -1,79 +1,37 @@
-<div class="content-articles">
+<div *ngIf="articles" class="content-articles">
     <h2 class="articles-title">latest articles</h2>
-
-    <div class="article">
-        <div class="article_img-content">
-          <picture>
-            <img src="https://s9.decofinder.com/0/0/zoom-autre/vig2/1388/1388969/Bain-De-Soleil-Italy-Dream-Design-Reef.jpg" alt=""/>
-          </picture>
-        </div>
-        <div class="article_infos">
-          <div class="article_header">
-            <span class="article_header_title">How to</span>
-            <span class="article_header_comment"><i class="fas fa-comments"></i> &nbsp;comments 5</span>
-            <span class="article_header_date"><i class="fas fa-clock"></i>&nbsp;date : 01 mai 1994</span>
-          </div>
-          <div class="article_infos_title">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, eveniet!</div>
-          <div class="article_infos_description">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat dolor magnam
-            illum suscipit voluptatem fuga voluptatibus. Optio odit autem magnam!
-          </div>
-          <div class="article_infos_auteur">
-              <div class="auteur_img-content">
-                <a >
-                  <picture>
-                    <img class="avatar" src="https://mir-s3-cdn-cf.behance.net/user/50/536f24147870431.5b7d4289b4a74.jpg" alt="">
-                  </picture>
-                </a>
-              </div>
-              <div class="auteur_name">
-                  <div>auteur</div>
-                  <div>amar yassa</div>
-              </div>
-          </div>
-          <div class="article_infos_read-more">
-            <a class="btn"> read more</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="article">
+      <div class="article" *ngFor="let article of articles">
           <div class="article_img-content">
             <picture>
-              <img src="https://s9.decofinder.com/0/0/zoom-autre/vig2/1388/1388969/Bain-De-Soleil-Italy-Dream-Design-Reef.jpg" alt=""/>
+              <img src="{{article?.article_image}}" alt=""/>
             </picture>
           </div>
           <div class="article_infos">
             <div class="article_header">
-              <span class="article_header_title">How to</span>
-              <span class="article_header_comment"><i class="fas fa-comments"></i> &nbsp;comments 5</span>
-              <span class="article_header_date"><i class="fas fa-clock"></i>&nbsp;date : 01 mai 1994</span>
+              <span class="article_header_title">{{article?.title}}</span>
+              <span class="article_header_comment"><i class="fas fa-comments"></i> &nbsp;comments {{article?.number_comments}}  </span>
+              <span class="article_header_date"><i class="fas fa-clock"></i>&nbsp;date :{{article?.date  | date:'d MMM y'}}</span>
             </div>
-            <div class="article_infos_title">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, eveniet!</div>
+            <div class="article_infos_title">{{article?.infos_title}}</div>
             <div class="article_infos_description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat dolor magnam
-              illum suscipit voluptatem fuga voluptatibus. Optio odit autem magnam!
+              {{article?.infos_description}}
             </div>
             <div class="article_infos_auteur">
                 <div class="auteur_img-content">
                   <a >
                     <picture>
-                      <img class="avatar" src="https://mir-s3-cdn-cf.behance.net/user/50/536f24147870431.5b7d4289b4a74.jpg" alt="">
+                      <img class="avatar" src="{{article?.avatar}}" alt="">
                     </picture>
                   </a>
                 </div>
                 <div class="auteur_name">
                     <div>auteur</div>
-                    <div>amar yassa</div>
+                    <div>{{article?.autor_name}}</div>
                 </div>
             </div>
             <div class="article_infos_read-more">
               <a class="btn"> read more</a>
             </div>
           </div>
-        </div>
-
-
-
-
+      </div>
 </div>
