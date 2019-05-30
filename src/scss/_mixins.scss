@@ -1,0 +1,25 @@
+@mixin _breakpoint-min($width) {
+  @media (min-width: $width+'px') {
+      @content;
+  }
+}
+
+@mixin grid($grid-temp-0,
+            $grid-temp-1:null,$grid-size-1:null,
+            $grid-temp-2:null,$grid-size-2:null,
+            $grid-temp-3:null,$grid-size-3:null,
+            $grid-temp-4:null,$grid-size-4:null,
+)
+{
+  // @debug $grid-size-1;
+  $g-t-c: 'grid-template-columns';
+  display: grid;
+  grid-template-columns: $grid-temp-0;
+  grid-auto-flow: dense;
+  overflow: hidden;
+  @if ($grid-temp-1 != null and $grid-size-1 != null ) {@include _breakpoint-min($grid-size-1) {#{$g-t-c}: $grid-temp-1;}}
+  @if ($grid-temp-2 != null and $grid-size-2 != null ) {@include _breakpoint-min($grid-size-2) {#{$g-t-c}: $grid-temp-2;}}
+  @if ($grid-temp-3 != null and $grid-size-3 != null ) {@include _breakpoint-min($grid-size-3) {#{$g-t-c}: $grid-temp-3;}}
+  @if ($grid-temp-4 != null and $grid-size-4 != null ) {@include _breakpoint-min($grid-size-4) {#{$g-t-c}: $grid-temp-4;}}
+
+}

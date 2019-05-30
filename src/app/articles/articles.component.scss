@@ -1,9 +1,14 @@
+@import 'mixins';
+
+$small-width:680;
+$large-width:1000;
+
 .content-articles{
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
-.articles-title{
+.title-articles{
   font-size: 3rem;
   padding: 3rem .7rem;
   margin: 0 auto;
@@ -15,16 +20,16 @@
 }
 
 
+
 .article{
-  display: grid;
-  grid-template-columns: 1fr;
-  overflow: hidden;
+  $grid-temp-0 : 1fr;
+  $grid-temp-1: 50% 50%; $grid-size-1: $small-width;
+  @include grid($grid-temp-0,
+                $grid-temp-1,$grid-size-1
+                );
 }
-@media (min-width: 680px) {
-.article{
-  grid-template-columns: 50% 50%;
-}
-}
+
+
 
 .article_img-content{
   display: flex;
@@ -120,18 +125,20 @@ color: #acacac;
   overflow: hidden;
   margin-bottom: 1rem;
 
+
 }
-@media (min-width: 680px) {
+
+
   .article_infos_title, .article_infos_description{
-    margin-bottom: 0.5rem;
-  }
+    @include _breakpoint-min($small-width) {
+      margin-bottom: 0.5rem;
+
+    }
+    @include _breakpoint-min($large-width) {
+      margin-bottom: 1.5rem;
+    }
   }
 
-@media (min-width: 1000px) {
-  .article_infos_title, .article_infos_description{
-    margin-bottom: 1.5rem;
-  }
-  }
 
 .article_infos_auteur, .article_infos_read-more {
   width: 50%;

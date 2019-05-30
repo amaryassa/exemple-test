@@ -1,78 +1,65 @@
+@import 'variables';
+@import 'mixins';
+$color-fond-header : #191919;
+$color-text-header : #fff;
+$colorIconSurvol:#50e895;
+
 .header{
+  $grid-temp-0 : 1fr 1fr 4fr 1fr 1fr;
+  $grid-temp-1: 4rem 10rem 1fr repeat(3, 4rem); $grid-size-1: 680;
+  @include grid($grid-temp-0,
+                $grid-temp-1,$grid-size-1
+                );
+  grid-auto-rows: minmax(50px, auto);
+
+}
+
+.header{
+  grid-gap: .2rem;
   position: sticky;
   top: 0;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 4fr 1fr 1fr;
-  grid-auto-rows: minmax(50px, auto);
-  grid-auto-flow: dense;
-
   width: 100%;
-  grid-gap: .2rem;
   padding: 0 .5rem;
   height: 75px;
-
-  background: #191919;
-  color: #fff;
-
+  background: $color-fond-header;
+  color: $color-text-header;
   align-items: center;
   justify-content: center;
   text-align: center;
-
   z-index: 50000;
-}
 
-@media (min-width: 680px) {
-  .header {
-    grid-template-columns: 4rem 10rem 1fr repeat(3, 4rem);
-  }
-}
 
-.header .no-visible-mobile{
-display: none !important;
-}
-
-@media (min-width: 680px) {
-  .header .no-visible-mobile{
-    display: flex !important;
+  .no-visible-mobile{
+      display: none !important;
+      @media (min-width: 680px) {
+        display: flex !important;
+      }
     }
-}
-
-.header > *:not(:last-child) {
-  border-right: 1px Solid #454444ba;
-  padding: .5rem 0;
-}
-
-.header_icon, .header_logo {
+  &> *:not(:last-child){
+    border-right: 1px Solid #454444ba;
+    padding: .5rem 0;
+  }
+  &_icon, &_logo {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     transition: color .3s;
     cursor: pointer;
+  }
+  &_logo{height: 100%;}
+  &_icon:hover{color: $colorIconSurvol;}
 }
 
-.header_icon:hover{
-  color: #50e895;
+.header_icon{
+  .fas, .far{font-size: 2rem;}
+  &.bars{justify-content: space-evenly;}
+  .bars_title{
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+      }
 }
 
-.header_icon .fas, .header_icon .far {
-  font-size: 2rem;
-}
-
-.header_icon.bars{
-justify-content: space-evenly;
-}
-
-.header_icon .bars_title{
-  font-size: 1.4rem;
-  line-height: 1.4rem;
-}
-
-.header_logo{
-
-  height: 100%;
-}
 .logo_title{
   font-family: 'Arial Narrow', sans-serif;
   color: #fefefe;
@@ -81,24 +68,24 @@ justify-content: space-evenly;
   line-height: 3rem;
 }
 
-
 .badge{
   position: relative;
-}
-.badge[data-count]:after {
-  position: absolute;
-  right: -.8rem;
-  top: -.7rem;
-  content: attr(data-count);
-  font-size: 1rem;
-  border-radius: 100%;
-  color: white;
-  text-align: center;
-  width: 1.3rem;
-  height: 1.3rem;
-  background: #e85050;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+
+  &[data-count]:after {
+    position: absolute;
+    right: -.8rem;
+    top: -.7rem;
+    content: attr(data-count);
+    font-size: 1rem;
+    border-radius: 100%;
+    color: white;
+    text-align: center;
+    width: 1.3rem;
+    height: 1.3rem;
+    background: #e85050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
