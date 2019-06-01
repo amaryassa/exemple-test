@@ -14,7 +14,7 @@
   // @debug $grid-size-1;
   $g-t-c: 'grid-template-columns';
   display: grid;
-  grid-template-columns: $grid-temp-0;
+  #{$g-t-c}: $grid-temp-0;
   grid-auto-flow: dense;
   overflow: hidden;
   @if ($grid-temp-1 != null and $grid-size-1 != null ) {@include _breakpoint-min($grid-size-1) {#{$g-t-c}: $grid-temp-1;}}
@@ -23,3 +23,24 @@
   @if ($grid-temp-4 != null and $grid-size-4 != null ) {@include _breakpoint-min($grid-size-4) {#{$g-t-c}: $grid-temp-4;}}
 
 }
+
+
+
+
+
+@mixin horizontal-gradient($from , $stop: 100%) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+  $color-transp: rgba($from , .2 );
+
+  background: linear-gradient(to right, $from 0%, $color-transp $stop);
+}
+
+@mixin image-horizontal-gradient($url, $from , $stop: 100%) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+  $color-transp: rgba($from , .2 );
+
+  background: url($url), linear-gradient(to right, $from 0%, $color-transp $stop);
+}
+

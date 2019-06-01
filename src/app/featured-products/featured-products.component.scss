@@ -1,22 +1,248 @@
-.featured-prod-content{
+@import 'mixins';
+
+
+.articles{
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 150px 150px 150px;
+  // grid-gap: 0.8rem;
+  // background-color: #FABF61;
+  overflow: hidden;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  grid-auto-flow: dense;
+  @include _breakpoint-min(680){
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 200px 200px;
+  }
+  @include _breakpoint-min(980){
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:auto 300px 300px;
+  }
+}
+.information{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.articles-title{
+  grid-column: 1/-1;
+}
+.product_infos{
+  position: relative;
+
+}
+
+.product_infos{
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: contain;
+  // height: 100%;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  position: relative;
+}
+
+
+
+
+.yassa{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: auto;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.product_infos{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  padding: .3rem;
+  grid-gap: .2rem;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 25rem;
+  position: absolute;
+  bottom: 1rem;
 }
-.prod-top {
-grid-column: span 2;
-grid-row: 1;
+.product_infos_title{
+  padding: .8rem .3rem;
+  grid-column: 1/-1;
+  font-size: 1.5rem;
 }
-.prod-right {
+.product_infos_prix{
+  color: #dc3545;
+}
+.product_infos_buy.btn {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.product_infos_buy.btn:hover {
+  color: #fff;
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.product_infos_heart .far{
+  background-color: #fff;
+  padding: 0.7rem;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0px 6px 12px 0px #333;
+  color: #7cae74;
+  font-size: 1.2rem;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.information1{
+  @include horizontal-gradient(#64696D);
+  grid-column: span 2;}
+  .information2{
+    @include horizontal-gradient(#343746);
+    grid-column: span 1;
+    grid-row: span 2;}
+    .information3{
+      @include horizontal-gradient(#2F161A);
+      grid-column: span 1;}
+      .information4{
+        @include horizontal-gradient(#FABF61);
+        grid-column: span 1;}
+
+.amar1{
+  grid-column: span 2;
+   $url: 'https://www.surplusmotos.com/images/800x600/ne/119730/1/piece-motos-grosses-cylindrees/moteur_kawasaki_z__300.jpg';
+   @include image-horizontal-gradient($url, #64696D);
+
+   background-repeat: no-repeat;
+   overflow: hidden;
+   background-size: contain;
+   // height: 100%;
+   background-position: top right;
+   background-repeat: no-repeat;
+   background-blend-mode: multiply;
+   position: relative;
+}
+.amar2{
   grid-column: span 1;
-  grid-row: span 2
-}
-.prod-bottom-left{
-  grid-column: span 1;
-}
-.prod-bottom-right{
-  grid-column: span 1;
-}
+  grid-row: span 2;
+
+   $url: 'https://www.surplusmotos.com/images/800x600/ne/119730/1/piece-motos-grosses-cylindrees/moteur_kawasaki_z__300.jpg';
+   @include image-horizontal-gradient($url, #343746);
+   background-repeat: no-repeat;
+   overflow: hidden;
+   background-size: contain;
+   // height: 100%;
+   background-position: top right;
+   background-repeat: no-repeat;
+   background-blend-mode: multiply;
+   position: relative;
+  }
+  .amar3{
+    grid-column: span 1;
+    $url: 'https://photoshop-kopona.com/uploads/posts/2017-03/thumbs/1490966005_moto4.png';
+    @include image-horizontal-gradient($url, #2F161A);
+    background-repeat: no-repeat;
+   overflow: hidden;
+   background-size: contain;
+   // height: 100%;
+   background-position: top right;
+   background-repeat: no-repeat;
+   background-blend-mode: multiply;
+   position: relative;
+
+  }
+  .amar4{
+    grid-column: span 1;
+    // background-color: #FABF61;
+  //  background: linear-gradient(to right, #FABF61, white);
+  //  @include horizontal-gradient(#FABF61);
+   $url: 'http://www.usbseyne.com/media/com_easysocial/photos/170/744/trail-moto-usb-49_large.jpg';
+   @include image-horizontal-gradient($url, #FABF61);
+   background-repeat: no-repeat;
+   overflow: hidden;
+   background-size: contain;
+   // height: 100%;
+   background-position: top right;
+   background-repeat: no-repeat;
+   background-blend-mode: multiply;
+   position: relative;
+  }
+
+
+
+
+
+
+
+
+
 
 
