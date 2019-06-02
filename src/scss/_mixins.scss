@@ -3,24 +3,57 @@
       @content;
   }
 }
+@mixin _breakpoint-max($width) {
+  @media (max-width: $width+'px') {
+      @content;
+  }
+}
 
+/*
+  **Création d'une grille avec des breakpoints
+  **il faut commencer par l'écran le plus petit sans donnée de breakpoint
+  ** puis en enchaine avec les autres breakpoints  (pas obligatoire)
+  ** on a droit jusqu'à 6 breakpoints
+  exemple :
+         $grid-temp-0 : 1fr; //obligatoire
+        $grid-temp-1: 1fr 1fr; $grid-size-1: 600; // pas obligatoire
+        $grid-temp-2: 1fr 1fr 1fr; $grid-size-2: 700; // pas obligatoire
+        $grid-temp-3: 1fr 1fr 1fr; $grid-size-3: 900;  // pas obligatoire
+        $grid-temp-4: 1fr 1fr 1fr; $grid-size-4: 1200; //pas   // pas obligatoire
+        $grid-temp-5: 1fr 1fr 1fr; $grid-size-5: 1600; //pas   // pas obligatoire
+        $grid-temp-6: 1fr 1fr 1fr; $grid-size-6: 2000; //pas obligatoire
+        @include grid($grid-temp-0,
+                      $grid-temp-1,$grid-size-1,
+                      $grid-temp-2,$grid-size-2,
+                      $grid-temp-3,$grid-size-3,
+                      $grid-temp-4,$grid-size-4,
+                      $grid-temp-5,$grid-size-5,
+                      $grid-temp-6,$grid-size-6,
+                      );
+*/
 @mixin grid($grid-temp-0,
             $grid-temp-1:null,$grid-size-1:null,
             $grid-temp-2:null,$grid-size-2:null,
             $grid-temp-3:null,$grid-size-3:null,
             $grid-temp-4:null,$grid-size-4:null,
+            $grid-temp-5:null,$grid-size-5:null,
+            $grid-temp-6:null,$grid-size-6:null,
 )
 {
   // @debug $grid-size-1;
   $g-t-c: 'grid-template-columns';
   display: grid;
   #{$g-t-c}: $grid-temp-0;
-  grid-auto-flow: dense;
-  overflow: hidden;
+
   @if ($grid-temp-1 != null and $grid-size-1 != null ) {@include _breakpoint-min($grid-size-1) {#{$g-t-c}: $grid-temp-1;}}
   @if ($grid-temp-2 != null and $grid-size-2 != null ) {@include _breakpoint-min($grid-size-2) {#{$g-t-c}: $grid-temp-2;}}
   @if ($grid-temp-3 != null and $grid-size-3 != null ) {@include _breakpoint-min($grid-size-3) {#{$g-t-c}: $grid-temp-3;}}
   @if ($grid-temp-4 != null and $grid-size-4 != null ) {@include _breakpoint-min($grid-size-4) {#{$g-t-c}: $grid-temp-4;}}
+  @if ($grid-temp-5 != null and $grid-size-5 != null ) {@include _breakpoint-min($grid-size-5) {#{$g-t-c}: $grid-temp-5;}}
+  @if ($grid-temp-6 != null and $grid-size-6 != null ) {@include _breakpoint-min($grid-size-6) {#{$g-t-c}: $grid-temp-6;}}
+
+  grid-auto-flow: dense;
+  overflow: hidden;
 
 }
 
