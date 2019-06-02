@@ -31,9 +31,10 @@
 @mixin horizontal-gradient($from , $stop: 100%) {
   /* fallback/image non-cover color */
   background-color: $from;
-  $color-transp: rgba($from , .2 );
+  $from-transp: rgba($from , .43 );
+  $to-transp: rgba($from , .2 );
 
-  background: linear-gradient(to right, $from 0%, $color-transp $stop);
+  background: linear-gradient(to right, $from-transp 0%, $to-transp $stop);
 }
 
 @mixin image-horizontal-gradient($url, $from , $stop: 100%) {
@@ -44,3 +45,15 @@
   background: url($url), linear-gradient(to right, $from 0%, $color-transp $stop);
 }
 
+@mixin overlay($bgColor: #000, $bgOpacity: 0.6){
+	&:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba($bgColor, $bgOpacity);
+    z-index: 0;
+	}
+}

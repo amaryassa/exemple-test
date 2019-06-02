@@ -1,13 +1,44 @@
 <div class="rs_grid">
-  <div class="rs_instagram">
-    <div class="instagram_title">Instagram</div>
-    <div>image 1</div>
-    <div>image 2</div>
-    <div>image 3</div>
-    <div>image 4</div>
-    <div>image 5</div>
-    <div>image 6</div>
+
+  <!-- background: 'url(https://dstqaa92re5c4.cloudfront.net/Images/Giant/Headers/2017/showcases/giant_anthem-sx_showcase_1920.jpg)' -->
+  <div class="rs_full" [ngStyle]="{
+background: 'url(https://images.unsplash.com/photo-1541625602330-2277a4c46182?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80)'
+                                        ,'background-color': 'rgba(187, 183, 183, 1)'
+                                        ,'background-repeat': 'no-repeat'
+                                        ,'background-blend-mode': 'multiply'
+                                        ,'background-size': 'cover'
+                                        }" >
+<div class="full-info">
+  <div class="full-info_content">
+    <div class="full-info_title">bicycle company</div>
+    <div class="full-info_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, nobis porro eius molestias fuga assumenda atque natus soluta qui hic.</div>
+    <div class="full-info_desc">Lorem ipsum dolor sit amet consectetur.</div>
+    <div class="full-info_desc">Lorem ipsum dolor sit amet.</div>
+    <div class="full-info_expression">if it ain't fixed, it's broken</div>
   </div>
+</div>
+  </div>
+
+  <div class="rs_instagram">
+    <span class="instagram_title"><a class="btn">@Instagram</a></span>
+    <ngx-slick-carousel class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+      >
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <picture>
+          <img [attr.data-lazy]=slide.img alt="" >
+        </picture>
+      </div>
+    </ngx-slick-carousel>
+
+  </div>
+
+
+
+
+
+
   <div class="rs_twitter">
       <div class="rs_icon"> <i class="fab fa-twitter"></i> </div>
       <div class="rs_name">twitter</div>

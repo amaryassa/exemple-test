@@ -68,10 +68,10 @@ body {
   line-height: 1rem;
   height: auto;
   font-size: 100%;
-
-
   background-color: #eef2ee30;
 }
+
+
 /* supprimer les valeur par défauts */
 p, form,input ,img, figure ,div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, blockquote, th, td{
   margin: 0;
@@ -140,9 +140,11 @@ picture img {
   text-transform: capitalize;
 }
 
+
+
+
 .slick-prev:before, .slick-next:before{
   font-size: 3rem;
-  /* color: red; */
   z-index: 100;
 }
 .slick-next, .slick-prev {
@@ -155,3 +157,5 @@ picture img {
 .slick-prev {
   left: 4rem !important;
 }
+
+// articles-title
