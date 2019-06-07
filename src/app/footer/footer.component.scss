@@ -15,15 +15,17 @@ $color-item: #a8a9ad;
 	color: $color-item;
 
   clear: both;
+
+  &-wrapper{
+    overflow: hidden;
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 .625rem;
+    margin: 0 auto;
+  }
 }
 
-.footer-wrapper{
-  overflow: hidden;
-  width: 100%;
-  max-width: 1600px;
-  padding: 0 .625rem;
-  margin: 0 auto;
-}
+
 
 .footer-grid{
   $grid-temp-0 : 1fr;
@@ -73,7 +75,7 @@ input {
     }
 
     &::after {
-      /* on affiche le accordion seulement sur les écran < $small-width */
+      /* on affiche l'accordion seulement sur les écran < $small-width */
       @include _breakpoint-max($small-width) {
       content: "\276F";
       width: 1rem;
@@ -114,14 +116,14 @@ input {
 
 // :checked
 input:checked {
-   /* le  footer_liste_label qui juste après le input:check*/
+   /* le  footer_liste_label qui est juste après le input:checked*/
   + .footer_liste_label {
     color: darken($color-label, 10%);
     &::after {
       transform: rotate(90deg);
     }
   }
-  /* tous les footer_liste_content qui se retrouve après un input:checked*/
+  /* tous les footer_liste_content qui se retrouvent après un input:checked*/
   ~ .footer_liste_content {
     background-color: darken($color-background,  10%);
     max-height: 100vh;

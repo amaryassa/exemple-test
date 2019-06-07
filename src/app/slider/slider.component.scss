@@ -1,79 +1,58 @@
-.slick-slider {
-  width: 100%;
-  margin: auto;
-  background: #000;
+@import 'mixins';
+@import 'global';
+
+$small-width : 700;
+
+.slick {
+    &-slider {
+        width: 100%;
+        margin: auto;
+        background: black;
+    }
+
+    &-slide {
+        position: relative;
+        @include overlay();
+
+        &::after {
+            opacity: 0.7;
+        }
+    }
 }
 
-.slick-slide{
-  position: relative;
+.slider_desc {
+    position: absolute;
+    right: 5%;
+    top: 15%;
+    text-align: center;
+    z-index: 100;
+    width: 17rem;
+
+    @include _breakpoint-min($small-width) {
+        right: 20%;
+        top: 20%;
+    }
+
+    &_text {
+        margin: 0 auto;
+        display: block;
+        text-align: left;
+        font-weight: bold;
+
+        text-transform: uppercase;
+        color: #fff;
+
+        font-size: 3rem;
+        line-height: 3rem;
+
+        @include _breakpoint-min($small-width) {
+            font-size: 5rem;
+            line-height: 5rem;
+        }
+    }
+
+    &_btn {
+        @extend %btn-danger;
+        font-size: 1.5rem;
+    }
 }
-.slider-desc{
-position: absolute;
-right: 5%;
-top: 15%;
-text-align: center;
-z-index: 100;
-width: 17rem;
-}
-
-@media (min-width: 700px){
-.slider-desc{
-  right: 20%;
-  top: 20%;
-  }
-}
-
-
-.slider-desc_text{
-  margin: 0 auto;
-  display: block;
-  text-align: left;
-  font-weight: bold;
-
-  text-transform: uppercase;
-  color: #fff;
-
-  font-size: 3rem;
-    line-height: 3rem;
-
-
-}
-@media (min-width: 700px){
-  .slider-desc_text{
-    font-size: 5rem;
-    line-height: 5rem;
-  }
-}
-
-.slider-desc_more-info.btn {
-  font-size: 2rem;
-  color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545;
-}
-@media (min-width: 700){
-  .slider-desc_more-info{
-    font-size: 1rem;
-  }
-}
-
-.slider-desc_more-info.btn:hover {
-  color: #fff;
-  background-color: #c82333;
-  border-color: #bd2130;
-}
-
-
-/* overlay */
-.slick-slide:after {
-  content:'\A';
-  position:absolute;
-  width:100%; height:100%;
-  top:0; left:0;
-  background:rgba(0,0,0,0.6);
-  opacity:0;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  opacity:0.7;
-}
-

@@ -1,270 +1,137 @@
 @import 'mixins';
+@import 'global';
+$color-fa-heart-green: #7cae74;
+
+$color-bloc-1 : #64696D;
+$color-bloc-2 : #343746;
+$color-bloc-3 : #2F161A;
+$color-bloc-4 : #FABF61;
 
 
-.articles{
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto 150px 150px 150px;
-  // grid-gap: 0.8rem;
-  // background-color: #FABF61;
-  overflow: hidden;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-  grid-auto-flow: dense;
-  @include _breakpoint-min(680){
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto 200px 200px;
-  }
-  @include _breakpoint-min(980){
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows:auto 300px 300px;
-  }
-}
-.information{
-  position: relative;
-  height: 100%;
-  width: 100%;
-  padding: .3rem;
-  overflow : hidden;
-  // mix-blend-mode: multiply;
-}
-.articles-title{
-  grid-column: 1/-1;
-  font-size: 3rem;
-    padding: 3rem .7rem;
-    margin: 0 auto;
-    display: block;
+.articles {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 150px 150px 150px;
+    overflow: hidden;
+    justify-content: center;
+    align-content: center;
     text-align: center;
-    font-weight: bold;
-    line-height: 3rem;
-    text-transform: uppercase;
-}
-.product_infos{
-  position: relative;
+    grid-auto-flow: dense;
 
-}
+    @include _breakpoint-min(680) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto 200px 200px;
+    }
 
-.product_infos{
-  background-repeat: no-repeat;
-  overflow: hidden;
-  background-size: contain;
-  // height: 100%;
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  position: relative;
+    @include _breakpoint-min(980) {
+        grid-template-rows: auto 300px 300px;
+    }
+
+    &-title {
+        @extend %title-article;
+        grid-column: 1/-1;
+    }
 }
 
+.product {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    padding: .3rem;
+
+    &_img {
+        position: absolute;
+        top: .3rem;
+        right: .3rem;
+
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+
+        z-index: -1;
+        mix-blend-mode: multiply;
+    }
+
+    &_infos {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: .2rem;
+        overflow: hidden;
+        bottom: 1rem;
+        justify-content: center;
+        align-items: center;
+
+        padding: .3rem;
+        width: 100%;
+        max-width: 25rem;
+
+        text-align: center;
+        color: #fff;
 
 
+        &_before-title {
+            grid-column: 1/-1;
+            display: flex;
+            padding: .8rem .3rem;
+            font-size: 1.3rem;
+        }
 
-.yassa{
-  position: absolute;
-  max-width: 100%;
-  max-height: 100%;
-  z-index: -1;
-  position: absolute;
-  top: .3rem;
-  right: .3rem;
-  margin: auto;
-  mix-blend-mode: multiply;
+        &_title {
+            grid-column: 1/-1;
+            display: flex;
+            padding: 2rem .3rem;
+            line-height: 2.2rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
 
+        &_prix {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        &_buy {
+            @extend %btn-white;
+            padding: .575rem .5rem;
+
+            & a {
+                text-decoration: none;
+                color: initial;
+            }
+        }
+
+        &_heart .far {
+            padding: 0.7rem;
+            text-align: center;
+            background-color: #fff;
+            color: $color-fa-heart-green;
+            box-shadow: 0px 6px 12px 0px #333;
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+    }
+
+    &:nth-of-type(1) {
+        @include horizontal-gradient($color-bloc-1);
+        grid-column: span 2;
+    }
+
+    &:nth-of-type(2) {
+        @include horizontal-gradient($color-bloc-2);
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+    &:nth-of-type(3) {
+        @include horizontal-gradient($color-bloc-3);
+        grid-column: span 1;
+    }
+
+    &:nth-of-type(4) {
+        @include horizontal-gradient($color-bloc-4);
+        grid-column: span 1;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-.product_infos{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: .3rem;
-  grid-gap: .2rem;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  max-width: 25rem;
-  position: absolute;
-  bottom: 1rem;
-  color: #fff;
-}
-.product_infos_before-title{
-  padding: .8rem .3rem;
-  grid-column: 1/-1;
-  display: flex;
-  font-size: 1.3rem;
-}
-.product_infos_title{
-  padding: 2rem .3rem;
-  grid-column: 1/-1;
-  display: flex;
-  font-size: 2rem;
-  line-height: 2.2rem;
-  font-weight: 600;
-}
-.product_infos_prix{
-  font-weight: 600;
-}
-.product_infos_buy.btn {
-  padding: .575rem .5rem;
-  color: #000;
-  background-color: rgba(#FFF, .9);
-  border-color:  rgba(#FFF, .9);
-  &:hover{
-    background-color: darken(#FFF, 10%);
-  border-color: darken(#FFF, 10%);
-  }
-}
-
-
-.product_infos_heart .far{
-  background-color: #fff;
-  padding: 0.7rem;
-  border-radius: 50%;
-  text-align: center;
-  box-shadow: 0px 6px 12px 0px #333;
-  color: #7cae74;
-  font-size: 1.2rem;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.information1{
-  @include horizontal-gradient(#64696D);
-  grid-column: span 2;}
-  .information2{
-    @include horizontal-gradient(#343746);
-    grid-column: span 1;
-    grid-row: span 2;}
-    .information3{
-      @include horizontal-gradient(#2F161A);
-      grid-column: span 1;}
-      .information4{
-        @include horizontal-gradient(#FABF61);
-        grid-column: span 1;}
-
-.amar1{
-  grid-column: span 2;
-   $url: 'https://www.surplusmotos.com/images/800x600/ne/119730/1/piece-motos-grosses-cylindrees/moteur_kawasaki_z__300.jpg';
-   @include image-horizontal-gradient($url, #64696D);
-
-   background-repeat: no-repeat;
-   overflow: hidden;
-   background-size: contain;
-   // height: 100%;
-   background-position: top right;
-   background-repeat: no-repeat;
-   background-blend-mode: multiply;
-   position: relative;
-}
-.amar2{
-  grid-column: span 1;
-  grid-row: span 2;
-
-   $url: 'https://www.surplusmotos.com/images/800x600/ne/119730/1/piece-motos-grosses-cylindrees/moteur_kawasaki_z__300.jpg';
-   @include image-horizontal-gradient($url, #343746);
-   background-repeat: no-repeat;
-   overflow: hidden;
-   background-size: contain;
-   // height: 100%;
-   background-position: top right;
-   background-repeat: no-repeat;
-   background-blend-mode: multiply;
-   position: relative;
-  }
-  .amar3{
-    grid-column: span 1;
-    $url: 'https://photoshop-kopona.com/uploads/posts/2017-03/thumbs/1490966005_moto4.png';
-    @include image-horizontal-gradient($url, #2F161A);
-    background-repeat: no-repeat;
-   overflow: hidden;
-   background-size: contain;
-   // height: 100%;
-   background-position: top right;
-   background-repeat: no-repeat;
-   background-blend-mode: multiply;
-   position: relative;
-
-  }
-  .amar4{
-    grid-column: span 1;
-    // background-color: #FABF61;
-  //  background: linear-gradient(to right, #FABF61, white);
-  //  @include horizontal-gradient(#FABF61);
-   $url: 'http://www.usbseyne.com/media/com_easysocial/photos/170/744/trail-moto-usb-49_large.jpg';
-   @include image-horizontal-gradient($url, #FABF61);
-   background-repeat: no-repeat;
-   overflow: hidden;
-   background-size: contain;
-   // height: 100%;
-   background-position: top right;
-   background-repeat: no-repeat;
-   background-blend-mode: multiply;
-   position: relative;
-  }
-
-
-
-
-
-
-
-
-
-
-

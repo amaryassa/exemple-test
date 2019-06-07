@@ -2,11 +2,11 @@
   #slickModal="slick-carousel"
   [config]="slideConfig"
   >
-<div ngxSlickItem *ngFor="let slide of slides" class="slide">
+<div ngxSlickItem *ngFor="let slide of slides" class="slider">
 
-<div class="slider-desc">
-  <p class="slider-desc_text">{{ slide.text }}.</p>
-  <div class="slider-desc_more-info btn">more info</div>
+<div class="slider_desc">
+  <p class="slider_desc_text">{{ slide.text }}.</p>
+  <div class="slider_desc_btn">more info</div>
 </div>
 <picture>
   <img [attr.data-lazy]=slide.img alt="" >

@@ -1,4 +1,4 @@
-<div class="apropos">
+<div class="apropos" *ngIf="about" >
   <div class="apropos_text">
     <h2 class="apropos_text_title">{{about?.title || defaultValue.title}}</h2>
     <div class="apropos_text_desc">
@@ -6,13 +6,13 @@
         {{about?.description || defaultValue.description}}
       </p>
     </div>
-    <div class="apropos_text_more-info btn">{{about?.button || defaultValue.button}}</div>
+    <div class="apropos_text_btn">{{about?.button || defaultValue.button}}</div>
   </div>
   <div class="apropos_img-content">
-    <div class="apropos_img_image-1">
+    <div class="apropos_img-content_img1">
       <picture><img src="{{about?.image1 || defaultValue.image1}}" alt=""></picture>
     </div>
-    <div class="apropos_img_image-2">
+    <div class="apropos_img-content_img2">
       <picture><img src="{{about?.image2 || defaultValue.image2}}" alt=""></picture>
     </div>
   </div>
