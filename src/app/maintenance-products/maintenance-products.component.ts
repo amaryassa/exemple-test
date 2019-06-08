@@ -1,3 +1,4 @@
+import { MaintenanceService } from './../../services/maintenance.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./maintenance-products.component.scss']
 })
 export class MaintenanceProductsComponent implements OnInit {
-
-  constructor() { }
-
+  public maintenance_products: any = [];
+  constructor(private _maintenanceService: MaintenanceService) { }
   ngOnInit() {
+    this._maintenanceService.getMaitenance().subscribe(data => {
+      console.log('maintenance_products ', data);
+      this.maintenance_products = data;
+      });
   }
 
 }

@@ -1,12 +1,30 @@
-<div class="content-maintenance-prod">
-<div class="maintenance-prod-infos">
-  <div><h2 class="prod-infos_title">maintenance products</h2></div>
-  <div class="prod-infos_desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    Animi eligendi quaerat facilis dolorem voluptates delectus molestiae itaque! Nemo, ipsa corrupti.
+<div class="maintenance" *ngIf="maintenance_products">
+  <div class="maintenance_infos">
+    <div><h2 class="maintenance_infos_title">maintenance products</h2></div>
+
+
+    <div class="maintenance_infos_desc">{{maintenance_products?.description_article}}
+    </div>
+    <div class="maintenance_infos_btn">see all products</div>
   </div>
-  <div class="prod-infos_all-products btn">see all products</div>
+
+
+  <article class="product" *ngFor="let maintenance_p of maintenance_products?.products">
+    <div class="product_img-content">
+      <a href="">
+        <picture>
+          <img [src]=maintenance_p?.img>
+        </picture>
+      </a>
+    </div>
+    <div class="product_infos">
+      <div class="product_infos_title">{{maintenance_p?.title}} </div>
+      <div class="product_infos_prix">{{maintenance_p?.prix}}</div>
+      <div class="product_infos_btn product_infos_buy btn"> buy &nbsp;<i class="fas fa-shopping-cart"></i></div>
+      <div class="product_infos_heart"><i  class="far fa-heart"></i></div>
+    </div>
+  </article>
+
 
 </div>
-<app-maintenance-product class="product-1"></app-maintenance-product>
-<app-maintenance-product class="product-2"></app-maintenance-product>
-</div>
+

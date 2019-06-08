@@ -5,9 +5,9 @@
     "date": "05/01/1994",
     "infos_title" :"Une étonnante maison japonaise construite sur pilotis",
     "infos_description" :"Cette originale maison de vacances japonaise est localisée en retrait, à la base du mont Bandai à Fukushima, au Japon. Suite au projet baptisé “One Year project” (projet une année)",
-    "article_image":"https://www.decofinder.com/i/une/edito/27041132.jpg",
+    "article_image":"/assets/images/article/article1.jpg",
     "autor_name" : "Amar YASSA",
-    "avatar" : "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/c0.0.100.100a/p100x100/31706594_10213486626858615_1476992807318061056_n.jpg?_nc_cat=100&_nc_ht=scontent-cdg2-1.xx&oh=79fcf2db79155a31bd241f3fdb61a43a&oe=5D9E75A4"
+    "avatar" : "/assets/images/article/avatar1.jpg"
     },
   {
   "title": "How To",
@@ -15,9 +15,9 @@
   "date": "04/27/2010",
   "infos_title" :"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, eveniet!",
   "infos_description" :"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat dolor magnam illum suscipit voluptatem fuga voluptatibus. Optio odit autem magnam!",
-  "article_image":"https://s9.decofinder.com/0/0/zoom-autre/vig2/1388/1388969/Bain-De-Soleil-Italy-Dream-Design-Reef.jpg",
-  "autor_name" : "Rama ASSAY",
-  "avatar" : "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-1/c0.0.100.100a/p100x100/31706594_10213486626858615_1476992807318061056_n.jpg?_nc_cat=100&_nc_ht=scontent-cdg2-1.xx&oh=79fcf2db79155a31bd241f3fdb61a43a&oe=5D9E75A4"
+  "article_image":"/assets/images/article/article2.jpg",
+  "autor_name" : "Lounes MATOUB",
+  "avatar" : "/assets/images/article/avatar2.jpg"
   }
 
 ]

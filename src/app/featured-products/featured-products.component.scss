@@ -1,6 +1,6 @@
 @import 'mixins';
 @import 'global';
-$color-fa-heart-green: #7cae74;
+
 
 $color-bloc-1 : #64696D;
 $color-bloc-2 : #343746;
@@ -104,13 +104,7 @@ $color-bloc-4 : #FABF61;
         }
 
         &_heart .far {
-            padding: 0.7rem;
-            text-align: center;
-            background-color: #fff;
-            color: $color-fa-heart-green;
-            box-shadow: 0px 6px 12px 0px #333;
-            border-radius: 50%;
-            font-size: 1.2rem;
+            @extend %icon-heart;
         }
     }
 

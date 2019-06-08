@@ -17,11 +17,11 @@ $medium-width: 1100;
         padding: 3rem 2rem;
 
         @include _breakpoint-min($small-width) {
-            padding: 3rem 2rem;
+            padding: 3rem 2rem 1rem 2rem;
         }
 
         @include _breakpoint-min($medium-width) {
-            padding: 3rem 6rem;
+            padding: 3rem 6rem 1rem 6rem;
         }
 
         &_title {

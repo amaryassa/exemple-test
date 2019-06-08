@@ -1,0 +1,21 @@
+{
+  "description_article" : "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi eligendi quaerat facilis dolorem voluptates delectus molestiae itaque! Nemo, ipsa corrupti.",
+  "products" : [
+      {
+      "img" : "/assets/images/maintenance/maintenance1.jpg",
+      "text_before_title" : "Vitesse",
+      "title" : "Sortie en groupe",
+      "buy" : "buy",
+      "prix" : "199.12"
+      },
+      {
+      "img" : "/assets/images/maintenance/maintenance2.jpg",
+      "title" : "new VTT",
+      "buy" : "buy",
+      "prix" : "300.12"
+      }
+    ]
+  }
+
+
+

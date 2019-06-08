@@ -64,7 +64,7 @@
 @mixin horizontal-gradient($from , $stop: 100%) {
   /* fallback/image non-cover color */
   background-color: $from;
-  $from-transp: rgba($from , .43 );
+  $from-transp: rgba($from , .9 );
   $to-transp: rgba($from , .2 );
 
   background: linear-gradient(to right, $from-transp 0%, $to-transp $stop);
