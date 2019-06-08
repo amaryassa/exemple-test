@@ -243,3 +243,13 @@ picture img {
     color: red;
   }
 }
+
+
+%flex50{
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 50%;
+}
+

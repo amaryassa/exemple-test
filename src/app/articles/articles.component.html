@@ -1,5 +1,5 @@
 <div *ngIf="articles" class="content-articles">
-    <h2 class="title-articles">latest articles</h2>
+    <h2 class="content-articles_title title-articles">latest articles</h2>
       <div class="article" *ngFor="let article of articles">
           <div class="article_img-content">
             <picture>
@@ -8,9 +8,9 @@
           </div>
           <div class="article_infos">
             <div class="article_header">
-              <span class="article_header_title">{{article?.title}}</span>
-              <span class="article_header_comment"><i class="fas fa-comments"></i> &nbsp;comments {{article?.number_comments}}  </span>
-              <span class="article_header_date"><i class="fas fa-clock"></i>&nbsp;date :{{article?.date  | date:'d MMM y'}}</span>
+              <span class="article_infos_categorie article_header_title">{{article?.title}}</span>
+              <span class="article_infos_commente article_header_comment"><i class="fas fa-comments"></i> &nbsp;comments {{article?.number_comments}}  </span>
+              <span class="article_infos_date article_header_date"><i class="fas fa-clock"></i>&nbsp;date :{{article?.date  | date:'d MMM y'}}</span>
             </div>
             <div class="article_infos_title">{{article?.infos_title}}</div>
             <div class="article_infos_description">
@@ -29,7 +29,7 @@
                     <div>{{article?.autor_name}}</div>
                 </div>
             </div>
-            <div class="article_infos_read-more">
+            <div class="article_infos_btn">
               <a class="btn"> read more</a>
             </div>
           </div>
