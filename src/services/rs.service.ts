@@ -11,7 +11,6 @@ export class RsService {
   private _url: string = '/assets/data/rs.json' ;
   constructor(private http: HttpClient) { }
 
-
   getImages(): Observable <any [] > {
     return this.http.get<any[]>(this._url);
   }

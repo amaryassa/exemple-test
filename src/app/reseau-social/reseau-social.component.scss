@@ -152,7 +152,7 @@ $sm-width: 600;
 .tweet {
     @include _breakpoint-max($sm-width + 1) {
         grid-column: 1/-1;
-        grid-row: 2;
+        grid-row: 3;
     }
 
     &_title {
