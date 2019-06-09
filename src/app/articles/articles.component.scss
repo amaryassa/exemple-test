@@ -1,5 +1,5 @@
 @import 'mixins';
-@import 'global';
+@import 'extends';
 
 
 $color-categorie-article : #ffc107;
@@ -13,163 +13,199 @@ $sm-width:680;
 $md-width:1000;
 
 
-.content-articles{
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  &_title{
-    @extend %title-article;
-    text-align: center;
-  }
+.content-articles {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &_title {
+        @extend %title-article;
+        text-align: center;
+    }
 }
 
-.article{
-  $grid-temp-0 : 1fr;
-  $grid-temp-1: 50% 50%; $grid-size-1: $sm-width;
-  @include grid($grid-temp-0,
-                $grid-temp-1,$grid-size-1
-                );
-  &_img-content{
-    display: flex;
-    overflow: hidden;
-    max-height: 400px;
+.article {
+    $grid-temp-0: 1fr;
+    $grid-temp-1: 50% 50%;
+    $grid-size-1: $sm-width;
+    @include grid($grid-temp-0,
+    $grid-temp-1, $grid-size-1);
 
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+    &_img-content {
+        display: flex;
+        overflow: hidden;
+        max-height: 400px;
 
-  &_header{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: .5rem;
-    padding: 1rem 0;
-    margin-bottom: 1rem;
-
-    justify-content: center;
-    align-items: center;
-
-    @include _breakpoint-min($sm-width) {padding: 0.3rem 0;margin-bottom: 0.5rem;}
-    @include _breakpoint-min($md-width) {margin-bottom: 1.5rem;}
-    .fas, .far {
-      align-self: center;
-      font-size: .7rem;
-      color: $color-btn-danger;
-    }
-  }
-
-  &_infos{
-    position: relative;
-    padding: .3rem 2.5rem 1rem 2.5rem;
-    @include _breakpoint-min($sm-width) {padding: 1rem 1.5rem;}
-    // @include _breakpoint-min($md-width) {padding: 2.5rem;}
-    &_categorie{
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      color: $color-categorie-article;
-    }
-    &_commente, &_date{
-      display: flex;
-      align-content: center;
-      justify-content: flex-end;
-      color: $color-comment-date-article;
-    }
-    &_title{
-      overflow: hidden;
-      max-height: 4.3rem;
-      margin-bottom: 1rem;
-
-      font-size: 2rem;
-      line-height: 2.1rem;
-      font-weight: 500;
-    }
-    &_description{
-      overflow: hidden;
-      max-height: 4.5rem;
-      margin-bottom: 1rem;
-
-      font-size: 1.1rem;
-      line-height: 1.5rem;
-      font-weight: 400;
-      color: $color-description-article;
-    }
-    &_title, &_description{
-      @include _breakpoint-min($sm-width) {margin-bottom: 0.5rem;}
-      @include _breakpoint-min($md-width) {margin-bottom: 1.5rem;}
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    &_auteur{
-      @extend %flex50;
-      justify-content: flex-start;
+    &_header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: .5rem;
+        padding: 1rem 0;
+        margin-bottom: 1rem;
 
-      .auteur_img-content{
-        height: 40px;
-        width: 40px;
-        min-height: 40px;
-        min-width: 40px;
+        justify-content: center;
+        align-items: center;
 
-        .avatar{
-          display: block;
-          width: 100%;
-          height: 100%;
-          border-radius: 50%;
+        @include _breakpoint-min($sm-width) {
+            padding: 0.3rem 0;
+            margin-bottom: 0.5rem;
         }
-      }
-      .auteur_name{
-        padding-left: 1rem;
-        & div:first-child{color:$color-label-auteur; }
-        & div:last-child{
-          text-transform: capitalize;
-          color:$color-name-auteur;
+
+        @include _breakpoint-min($md-width) {
+            margin-bottom: 1.5rem;
         }
-      }
-    }
-    &_btn{
-      @extend %flex50;
-      justify-content: flex-end;
-      & a{
-        @extend %btn-danger;
-      }
-    }
-  }
-  /* en impair:  inverse les blocs (image et description ) */
-  &:nth-child(2n+1) .article_img-content{
-    @include _breakpoint-min($sm-width) { order: 2;}
-  }
-/* 1/2 en commençant par la première ligne */
-  &:nth-child(2n+0) .article_infos{
-    box-shadow: 4px -2px 5px -5px #333;
-    @include _breakpoint-min($sm-width) {
-      border: 1px solid $color-border-article;
-      border-bottom-color:  transparent;
-      border-left-color: transparent;
 
-      &:after{
-        @include _triangle;
-        left: -32px;
-        top: 50%;
-        bottom: 50%;
-      }
+        .fas,
+        .far {
+            align-self: center;
+            font-size: .7rem;
+            color: $color-btn-danger;
+        }
     }
-  }
-/* 1/2 en commençant par la première ligne (à droite) */
-  &:nth-child(2n+1) .article_infos{
-    box-shadow: 4px -2px 5px -5px #333;
-    @include _breakpoint-min($sm-width) {
-      border: 1px solid $color-border-article;
-      border-top-color:  transparent;
-      border-right-color: transparent;
 
-      &:after{
-        @include _triangle;
-        right: -32px;
-        top: 50%;
-        bottom: 50%;
-        transform: rotate(90deg);
-      }
+    &_infos {
+        position: relative;
+        padding: .3rem 2.5rem 1rem 2.5rem;
+
+        @include _breakpoint-min($sm-width) {
+            padding: 1rem 1.5rem;
+        }
+
+        &_categorie {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $color-categorie-article;
+        }
+
+        &_commente,
+        &_date {
+            display: flex;
+            align-content: center;
+            justify-content: flex-end;
+            color: $color-comment-date-article;
+        }
+
+        &_title {
+            overflow: hidden;
+            max-height: 4.3rem;
+            margin-bottom: 1rem;
+
+            font-size: 2rem;
+            line-height: 2.1rem;
+            font-weight: 500;
+        }
+
+        &_description {
+            overflow: hidden;
+            max-height: 4.5rem;
+            margin-bottom: 1rem;
+
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+            font-weight: 400;
+            color: $color-description-article;
+        }
+
+        &_title,
+        &_description {
+            @include _breakpoint-min($sm-width) {
+                margin-bottom: 0.5rem;
+            }
+
+            @include _breakpoint-min($md-width) {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &_auteur {
+            @extend %flex50;
+            justify-content: flex-start;
+
+            .auteur_img-content {
+                height: 40px;
+                width: 40px;
+                min-height: 40px;
+                min-width: 40px;
+
+                .avatar {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+
+            .auteur_name {
+                padding-left: 1rem;
+
+                & div:first-child {
+                    color: $color-label-auteur;
+                }
+
+                & div:last-child {
+                    text-transform: capitalize;
+                    color: $color-name-auteur;
+                }
+            }
+        }
+
+        &_btn {
+            @extend %flex50;
+            justify-content: flex-end;
+
+            & a {
+                @extend %btn-danger;
+            }
+        }
     }
-  }
+
+    /* en impair:  inverse les blocs (image et description ) */
+    &:nth-child(2n+1) .article_img-content {
+        @include _breakpoint-min($sm-width) {
+            order: 2;
+        }
+    }
+
+    /* 1/2 en commençant par la première ligne */
+    &:nth-child(2n+0) .article_infos {
+        box-shadow: 4px -2px 5px -5px #333;
+
+        @include _breakpoint-min($sm-width) {
+            border: 1px solid $color-border-article;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+
+            &:after {
+                @include _triangle;
+                left: -32px;
+                top: 50%;
+                bottom: 50%;
+            }
+        }
+    }
+
+    /* 1/2 en commençant par la première ligne (à droite) */
+    &:nth-child(2n+1) .article_infos {
+        box-shadow: 4px -2px 5px -5px #333;
+
+        @include _breakpoint-min($sm-width) {
+            border: 1px solid $color-border-article;
+            border-top-color: transparent;
+            border-right-color: transparent;
+
+            &:after {
+                @include _triangle;
+                right: -32px;
+                top: 50%;
+                bottom: 50%;
+                transform: rotate(90deg);
+            }
+        }
+    }
 }
-
-

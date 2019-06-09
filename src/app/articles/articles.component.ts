@@ -18,7 +18,7 @@ public articles: any = [];
   ngOnInit() {
     this._articleService.getArticles().subscribe(data => {
       this.articles = data;
-      console.log(this.articles)
+      // console.log(this.articles);
       });
   }
 

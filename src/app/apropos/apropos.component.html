@@ -1,4 +1,4 @@
-<div class="apropos" *ngIf="about" >
+<div class="apropos" *ngIf="about || defaultValue" >
   <div class="apropos_text">
     <h2 class="apropos_text_title">{{about?.title || defaultValue.title}}</h2>
     <div class="apropos_text_desc">

@@ -1,0 +1,18 @@
+[
+  {
+    "text":"Première image",
+    "img": "/assets/images/slider/slider1.jpg"
+  },
+  {
+    "text":"Jolie photo",
+    "img": "/assets/images/slider/slider2.jpg"
+  },
+  {
+    "text":"beau Paysage",
+    "img": "/assets/images/slider/slider3.jpg"
+  },
+  {
+    "text":"jolies fleurs",
+    "img": "/assets/images/slider/slider4.jpg"
+  }
+]

@@ -12,7 +12,7 @@ export class FeaturedProductsComponent implements OnInit {
   constructor(private _featuredService: FeaturedService) { }
   ngOnInit() {
     this._featuredService.getProducts().subscribe(data => {
-      console.log('jsk', data);
+      // console.log('featured_products', data);
       this.featured_products = data;
       });
   }

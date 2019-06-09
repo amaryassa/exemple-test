@@ -21,7 +21,7 @@ export class AproposComponent implements OnInit {
   ngOnInit() {
     this._proposService.getApropos().subscribe(data => {
       this.about = data;
-      console.log(this.about)
+      // console.log(this.about);
       });
   }
 

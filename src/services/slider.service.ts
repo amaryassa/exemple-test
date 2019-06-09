@@ -5,13 +5,12 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class FooterService {
-
-  private _url: string = '/assets/data/footer.json' ;
+export class SliderService {
+  private _url: string = '/assets/data/slider.json' ;
   constructor(private http: HttpClient) { }
 
 
-  getListFooter(): Observable <any [] > {
+  getImages(): Observable <any [] > {
     return this.http.get<any[]>(this._url);
   }
 }

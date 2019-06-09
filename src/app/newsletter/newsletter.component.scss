@@ -1,94 +1,90 @@
 @import 'mixins';
-$medium-width: 800;
+$md-width: 800;
 
 
 
-.newsletter{
-  position: relative;
-
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 0.7rem;
-  justify-content: center;
-
-  height: 100%;
-  width: 100%;
-  padding: 3rem;
-  margin-bottom: 2rem;
-  align-items: center;
-  text-align: center;
-
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='10' width='10'><line x1='0' y1='0' x2='200' y2='200' style='stroke:rgba(240, 241, 242, 0.7);stroke-width:2' /></svg>")  no-repeat;
-  background-repeat: repeat;
-
-
-  &_title {
-    padding-bottom: 2rem;
-
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-   }
-  &_text {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    padding-bottom: 2rem;
-   }
-   .form{
+.newsletter {
     position: relative;
-    font-weight: 400;
-    font-style: normal;
-    display: inline-flex;
-    color: rgba(0,0,0,.87);
-    height: 2.5rem;
-    line-height: 2.5rem;
-    width: 80%;
-    max-width: 95%;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0.7rem;
+    justify-content: center;
 
-    @include _breakpoint-min($medium-width) {
-      width: 60%;
-    }
-    &_email{
-      margin: 0;
-      max-width: 100%;
-      flex: 1 0 auto;
-      outline: 0;
-      text-align: left;
-      padding: .67857143em 1em;
-      background: #fff;
-      border: 1px solid rgba(34,36,38,.15);
-      color: rgba(0,0,0,.87);
-      border-radius: .28rem;
-      transition: border-color .1s ease,-webkit-box-shadow .1s ease;
-      transition: box-shadow .1s ease,border-color .1s ease;
-      transition: box-shadow .1s ease,border-color .1s ease,-webkit-box-shadow .1s ease;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      padding-right: 2.2rem !important;
-    }
-    &_icon{
-    cursor: default;
-    position: absolute;
-    line-height: 1;
-    text-align: center;
-    top: 0;
-    right: .2rem;
-    margin: 0;
     height: 100%;
-    width: 2rem;
-    opacity: .5;
-    border-radius: 0 .28rem .28rem 0;
-    -webkit-transition: opacity .3s ease;
-    transition: opacity .3s ease;
-    line-height: 2.5rem;
-    font-size: 1.3rem;
-    color: red;
+    width: 100%;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    text-align: center;
 
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='10' width='10'><line x1='0' y1='0' x2='200' y2='200' style='stroke:rgba(240, 241, 242, 0.7);stroke-width:2' /></svg>") no-repeat;
+    background-repeat: repeat;
+
+
+    &_title {
+        padding-bottom: 2rem;
+
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
     }
 
-  }
-  }
+    &_text {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        padding-bottom: 2rem;
+    }
 
+    .form {
+        position: relative;
+        font-weight: 400;
+        font-style: normal;
+        display: inline-flex;
+        color: rgba(0, 0, 0, .87);
+        height: 2.5rem;
+        line-height: 2.5rem;
+        width: 80%;
+        max-width: 95%;
+        margin: 0 auto;
 
+        @include _breakpoint-min($md-width) {
+            width: 60%;
+        }
+
+        &_email {
+            margin: 0;
+            max-width: 100%;
+            flex: 1 0 auto;
+            outline: 0;
+            text-align: left;
+            padding: .67857143em 1em;
+            background: #fff;
+            border: 1px solid rgba(34, 36, 38, .15);
+            color: rgba(0, 0, 0, .87);
+            border-radius: .28rem;
+            transition: border-color .1s ease, -webkit-box-shadow .1s ease;
+            transition: box-shadow .1s ease, border-color .1s ease;
+            box-shadow: none;
+            padding-right: 2.2rem !important;
+        }
+
+        &_icon {
+            cursor: default;
+            position: absolute;
+            top: 0;
+            right: .2rem;
+            margin: 0;
+            height: 100%;
+            width: 2rem;
+            font-size: 1.3rem;
+            line-height: 2.5rem;
+            text-align: center;
+            border-radius: 0 .28rem .28rem 0;
+            -webkit-transition: opacity .3s ease;
+            transition: opacity .3s ease;
+            color: red;
+            opacity: .5;
+        }
+    }
+}

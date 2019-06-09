@@ -1,5 +1,5 @@
 @import 'mixins';
-@import 'global';
+@import 'extends';
 
 $xs-width : 500;
 $sm-width : 980;
@@ -16,15 +16,20 @@ $color-bg-maintenance-products :#E8D5B7;
     $grid-temp-3: 1.75fr minmax(250px, 300px) minmax(250px, 300px);
     $grid-size-3: $md-width;
     @include grid($grid-temp-0,
-                  $grid-temp-1, $grid-size-1,
-                  $grid-temp-2, $grid-size-2,
-                  $grid-temp-3, $grid-size-3);
+    $grid-temp-1, $grid-size-1,
+    $grid-temp-2, $grid-size-2,
+    $grid-temp-3, $grid-size-3);
 
     grid-gap: .8rem;
     padding: 1rem;
 
-    @include _breakpoint-min($sm-width+1) {margin-bottom: 2rem;}
-    @include _breakpoint-min($md-width) {padding: 4rem;}
+    @include _breakpoint-min($sm-width+1) {
+        margin-bottom: 2rem;
+    }
+
+    @include _breakpoint-min($md-width) {
+        padding: 4rem;
+    }
 
     background-color: $color-bg-maintenance-products;
 
@@ -32,7 +37,10 @@ $color-bg-maintenance-products :#E8D5B7;
         color: #454343;
         padding-right: 8rem;
 
-        @include _breakpoint-max($md-width - 50) {padding-right: 2rem;}
+        @include _breakpoint-max($md-width - 50) {
+            padding-right: 2rem;
+        }
+
         @include _breakpoint-max($sm-width) {
             grid-column: 1/-1;
             padding-right: 1rem;
@@ -82,8 +90,16 @@ $color-bg-maintenance-products :#E8D5B7;
             font-size: 1.5rem;
         }
 
-        &_prix {color: $color-btn-danger;}
-        &_btn {@extend %btn-danger;}
-        &_heart .far {@extend %icon-heart;}
+        &_prix {
+            color: $color-btn-danger;
+        }
+
+        &_btn {
+            @extend %btn-danger;
+        }
+
+        &_heart .far {
+            @extend %icon-heart;
+        }
     }
 }

@@ -11,7 +11,7 @@ export class MaintenanceProductsComponent implements OnInit {
   constructor(private _maintenanceService: MaintenanceService) { }
   ngOnInit() {
     this._maintenanceService.getMaitenance().subscribe(data => {
-      console.log('maintenance_products ', data);
+      // console.log('maintenance_products ', data);
       this.maintenance_products = data;
       });
   }

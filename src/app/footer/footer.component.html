@@ -1,58 +1,36 @@
-<footer class="footer">
+<footer class="footer" *ngIf="footer">
   <div class="footer-wrapper">
-      <div class="footer-grid">
-          <div class="footer_liste">
-              <input type="checkbox" id="presentation">
-              <label class="footer_liste_label" for="presentation">bicycle company</label>
-              <ul class="footer_liste_content">
-                  <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, adipisci?</li>
-                  <li><a href="#" title="shipping and delivery">guide</a></li>
-                  <li><a href="#" title="payment options">teams of use</a></li>
-                  <li><a href="#" title="contact us">private policy</a></li>
-              </ul>
-          </div>
-          <div class="footer_liste">
-              <input type="checkbox" id="quick-links">
-              <label class="footer_liste_label" for="quick-links">quick links</label>
-              <ul class="footer_liste_content">
-                  <li><a href="#" title="Our Story">search</a></li>
-                  <li><a href="#" title="shipping and delivery">shipping and delivery</a></li>
-                  <li><a href="#" title="payment options">payment options</a></li>
-                  <li><a href="#" title="contact us">contact us</a></li>
-              </ul>
-          </div>
-          <div class="footer_liste">
-            <input type="checkbox" id="about">
-            <label class="footer_liste_label" for="about">About</label>
-            <ul class="footer_liste_content">
-                <li><a href="#" title="search">Our Story</a></li>
-                <li><a href="#" title="maintenance">maintenance</a></li>
-                <li><a href="#" title="service">service</a></li>
-                <li><a href="#" title="products">products</a></li>
-            </ul>
-          </div>
-          <div class="footer_liste">
-              <input type="checkbox" id="follow">
-              <label class="footer_liste_label" for="follow">follow us</label>
-              <ul class="footer_liste_content">
+    <div class="footer-grid">
+      <div class="footer_liste" *ngFor="let f of footer?.liste">
+        <input type="checkbox" id="{{f?.checkbox}}">
+        <label class="footer_liste_label" for="{{f?.checkbox}}">{{f?.label}}</label>
+        <ul class="footer_liste_content">
+          <li *ngFor="let contenu of f?.content">
+            <a href="">{{contenu}}</a>
+          </li>
 
-                  <li>
-                    <a><i class="fab fa-facebook-f fa-2x"></i></a>
-                    <a><i class="fab fa-twitter fa-2x"></i></a>
-                    <a><i class="fab fa-instagram fa-2x"></i></a>
-                  </li>
-
-                  <li><a href="#" title="payment methode">payment methode</a></li>
-                  <li>
-                      <a href=""><i class="fab fa-cc-paypal fa-5x"></i></a>
-                      <a href=""><i class="fab fa-cc-visa fa-5x"></i></a>
-                  </li>
-
-              </ul>
-          </div>
-          <div class="footer_copyright">
-            copyright {{  dateNow | date: 'yyyy' }} - bicycle company
-          </div>
+        </ul>
       </div>
+      <div class="footer_liste">
+        <input type="checkbox" id="{{footer?.follow?.follow}}">
+        <label class="footer_liste_label" for="{{footer?.follow?.follow}}">{{footer?.follow?.label}}</label>
+        <ul class="footer_liste_content">
+          <li>
+            <a *ngFor="let rs of footer?.follow?.rs"><i class="fab fa-{{rs}} fa-2x"></i></a>
+          </li>
+
+          <li><a href="#" title="payment methode">payment methode</a></li>
+          <li>
+            <a *ngFor="let payment of footer?.follow?.payment" href="">
+              <i class="fab fa-cc-{{payment}} fa-5x"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="footer_copyright">
+        copyright {{  dateNow | date: 'yyyy' }} - bicycle company
+      </div>
+    </div>
   </div>
 </footer>

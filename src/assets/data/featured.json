@@ -1,37 +1,33 @@
 [
- {
-  "img" : "/assets/images/featured/featured1.jpg",
-  "text_before_title" : "Vitesse",
-  "title" : "Cassette de pignons ip ",
-  "buy" : "buy",
-  "prix" : "99.12"
- },
- {
-  "img" : "/assets/images/featured/featured2.jpg",
+  {
+    "img": "/assets/images/featured/featured1.jpg",
+    "text_before_title": "Vitesse",
+    "title": "Cassette de pignons ip ",
+    "buy": "buy",
+    "prix": "99.12"
+  },
+  {
+    "img": "/assets/images/featured/featured2.jpg",
 
-  "text_before_title" : "cable",
-  "title" : "Carter de chaîne / roue",
-  "buy" : "buy",
-  "prix" : "300.12"
- },
- {
-  "img" : "/assets/images/featured/featured3.jpg",
+    "text_before_title": "cable",
+    "title": "Carter de chaîne / roue",
+    "buy": "buy",
+    "prix": "300.12"
+  },
+  {
+    "img": "/assets/images/featured/featured3.jpg",
 
-  "text_before_title" : "Dérailleur",
-  "title" : "Cadre en acier manchonnér",
-  "buy" : "buy",
-  "prix" : "14.12"
- },
- {
-  "img" : "/assets/images/featured/featured4.jpg",
+    "text_before_title": "Dérailleur",
+    "title": "Cadre en acier manchonnér",
+    "buy": "buy",
+    "prix": "14.12"
+  },
+  {
+    "img": "/assets/images/featured/featured4.jpg",
 
-  "text_before_title" : "Casque de vélo",
-  "title" : "Lorem ipsum, dolor",
-  "buy" : "buy",
-  "prix" : "154.12"
- }
-
+    "text_before_title": "Casque de vélo",
+    "title": "Lorem ipsum, dolor",
+    "buy": "buy",
+    "prix": "154.12"
+  }
 ]
-
-
-

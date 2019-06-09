@@ -1,7 +1,35 @@
 {
-  "title": "WHO WE ARE",
- "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus non molestias fugiat et omnis minus vitae, minima sapiente. Corrupti ab ducimus odit adipisci. Molestias, numquam, quisquam tenetur eos rem explicabo voluptatem nemo nam libero magnam, delectus dolore minima! Blanditiis, magnam illum accusantium sit laborum aperiam qui recusandae itaque ab ullam.",
-  "button": "More info",
-  "image1" :"https://www.decofinder.com/i/une/Promotion/28693956.jpg",
-  "image2" :"https://www.decofinder.com/i/une/CoupDeCoeur/28693955.jpg"
+  "liste": [
+    {
+      "checkbox": "presentation",
+      "label": "bicycle company",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, adipisci?",
+        "guide",
+        "teams of use",
+        "private policy"
+      ]
+    },
+    {
+      "checkbox": "quick-links",
+      "label": "quick links",
+      "content": [
+        "search",
+        "shipping and delivery",
+        "payment options",
+        "contact us"
+      ]
+    },
+    {
+      "checkbox": "about",
+      "label": "About",
+      "content": ["Our Story", "maintenance", "service", "products"]
+    }
+  ],
+  "follow": {
+    "checkbox": "follow",
+    "label": "follow us",
+    "rs": ["facebook-f", "twitter", "instagram", "google"],
+    "payment": ["paypal", "visa"]
+  }
 }

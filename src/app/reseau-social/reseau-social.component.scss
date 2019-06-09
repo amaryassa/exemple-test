@@ -1,174 +1,217 @@
 @import 'mixins';
-$color-beta: #6e6e6e;
+@import 'extends';
+$color-expression: #D5424A;
+$color-twitter:#1da1f2;
+$color-facebook:#3c5a99;
+$color-title-time-tweet:#878484;
+$color-hashtag :#f21313eb;
+$color-border-next-prev-tweet :#cdcccc;
+$sm-width: 600;
 
-.rs_grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 3rem 0 0 0;
-  overflow: hidden;
+.rs_grid {
+    $grid-temp-0: 1fr 1fr;
+    $grid-temp-1: 1fr 2fr 1fr;
+    $grid-size-1: $sm-width;
+    @include grid($grid-temp-0,
+    $grid-temp-1, $grid-size-1);
+    padding: 3rem 0 0 0;
 }
 
-@media (min-width: 600px){
-  .rs_grid{
-  grid-template-columns: 1fr 2fr 1fr;
-  }
-}
+.full {
+    overflow: hidden;
+    grid-row: 1;
+    grid-column: 1/-1;
+    grid-row: 1;
+    background-color: rgba(187, 183, 183, 1) !important;
+    background-repeat: no-repeat !important;
+    background-blend-mode: multiply !important;
+    background-size: cover !important;
 
-.rs_full{
-  overflow: hidden;
-  grid-row: 1;
-  grid-column: 1/-1;
-  grid-row: 1;
-}
+    &-info {
+        position: relative;
+        padding: 0 4rem;
+        $color: #0E1A23;
 
-.full-info{
-  position: relative;
-  $color-beta: #0E1A23;
-  padding: 0 4rem;
-}
-.full-info_content{
-  padding-top: 15rem;
-  padding-bottom: 15rem;
-  max-width: 415px;
-  float: right; color: #fff;
+        &_content {
+            float: right;
+            max-width: 415px;
+            padding-top: 15rem;
+            padding-bottom: 15rem;
+            color: #fff;
+        }
 
-}
-.full-info_title{
-  font-size: 2.3rem;
-  line-height: 2.3rem;
-  letter-spacing: .3rem;
-  text-transform: uppercase;
-  padding-bottom: .4rem;
-  font-weight: 600;
-}
-.full-info_desc{
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-  padding-bottom: .8rem;
-}
-.full-info_expression{
-  display: flex;
-    align-items: center;
-  font-size: 2rem;
-  line-height: 2rem;
-  padding-bottom: .4rem;
-  color: #D5424A;
-  &:after{
-    content: '';
-    font-style:normal;
-  margin-left:3rem;
-  font-family:"Segoe Print", "Times New Roman", Verdana;
-  padding-left: 3rem;
-  background:url('https://www.xul.fr/css/images/blockquote.png');
-  background-repeat:no-repeat;
-  min-height: 3rem;
-  transform: rotate(180deg);
-  mix-blend-mode: multiply;
-  }
-}
+        &_title {
+            padding-bottom: .4rem;
+            font-size: 2.3rem;
+            line-height: 2.3rem;
+            letter-spacing: .3rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
 
+        &_desc {
+            padding-bottom: .8rem;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+        }
 
+        &_expression {
+            display: flex;
+            padding-bottom: .4rem;
+            align-items: center;
+            font-size: 2rem;
+            line-height: 2rem;
+            color: $color-expression;
 
-
-
-
-.rs_instagram{
-  overflow: hidden;
-  // grid-row: 1;
-  grid-column: 1/-1;
-  position: relative;
-}
-.instagram_title{
-  grid-column: 1/-1;
-  grid-row: 2;
-  padding-top: 3rem;
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  bottom: 0;
-  z-index: 1;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .btn {
-      font-size: 1.7rem;
-      background-color: rgba(#D8D8D8, .8);
-      border-radius: 1.25rem;
-
-  }
-}
-.rs_twitter, .rs_last-tweet, .rs_facebook {
-  padding: 2rem 2rem 0rem 2rem;
-}
-.rs_twitter, .rs_facebook{
-  text-align: center;
-  font-size: 3rem;
-  line-height: 3rem;
-  color: #fff;
-}
-
-
-.rs_twitter{
-  background-color: #1da1f2;
-}
-
-
-
-.rs_facebook{
-  background-color: #3c5a99;
-}
-
-
-.rs_name, .rs_hash{ margin-top: .5rem;
-  font-size: 1.5rem;}
-
-  @media (max-width: 601px){
-    .rs_last-tweet{
-      grid-column: 1/-1;
-      grid-row: 2;
+            &:after {
+                content: '';
+                min-height: 3rem;
+                margin-left: 3rem;
+                padding-left: 3rem;
+                font-style: normal;
+                font-family: "Segoe Print", "Times New Roman", Verdana;
+                background: url('https://www.xul.fr/css/images/blockquote.png');
+                background-repeat: no-repeat;
+                transform: rotate(180deg);
+                mix-blend-mode: multiply;
+            }
+        }
     }
-  }
-
-  .tweet_title {
-    font-size: 1rem;
-    text-transform: uppercase;
-    color: #878484;
-    padding-bottom: .8rem  ;
-}
-.tweet_content {
-  font-size: 2rem;
-  line-height: 2rem;
-  padding-bottom: 2rem  ;
-}
-.hashtag{
-  color: #f21313eb;
 }
 
-.tweet-info{
-  position: relative;
+
+.instagram {
+    overflow: hidden;
+    // grid-row: 1;
+    grid-column: 1/-1;
+    position: relative;
+
+    &_title {
+        grid-column: 1/-1;
+        grid-row: 2;
+        padding-top: 3rem;
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        z-index: 1;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &_btn {
+            @extend %btn;
+            font-size: 1.7rem;
+            background-color: rgba(#D8D8D8, .8);
+            border-radius: 1.25rem;
+
+        }
+    }
 }
 
-.tweet-info_name {
-  font-size: 1.3rem;
-  padding-bottom: 1.3rem;
+
+
+
+
+
+
+
+
+
+.twitter,
+.tweet,
+.facebook {
+    padding: 2rem 2rem 0rem 2rem;
 }
-.tweet-info_time {
-  color: #878484;
-  padding-bottom: .3rem;
+
+
+
+.twitter,
+.facebook {
+    text-align: center;
+    font-size: 3rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: $color-twitter;
 }
-.tweet-info_btn{
-  position: absolute;
-  right: 1rem;
-  top: .5rem;
-  border: 1px solid #cfcece;
-  overflow: hidden;
+
+.facebook {
+    background-color: $color-facebook;
+
+
 }
-.tweet-info_prev{
-  padding: 1rem;
-  border-right: .5px solid #cdcccc;
+
+.name,
+.hash {
+    margin-top: .5rem;
+    font-size: 1.5rem;
 }
-.tweet-info_next{
-  padding: 1rem;
-  border-left: .5px solid #cdcccc;
+
+
+.tweet {
+    @include _breakpoint-max($sm-width + 1) {
+        grid-column: 1/-1;
+        grid-row: 2;
+    }
+
+    &_title {
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: $color-title-time-tweet;
+        padding-bottom: .8rem;
+    }
+
+    &_content {
+        font-size: 2rem;
+        line-height: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .hashtag {
+
+        color: $color-hashtag;
+    }
+
+    &-info {
+        position: relative;
+
+        &_name {
+            font-size: 1.3rem;
+            padding-bottom: 1.3rem;
+        }
+
+        &_time {
+
+            color: $color-title-time-tweet;
+            padding-bottom: .3rem;
+        }
+
+        &_btn {
+            @extend %btn;
+            position: absolute;
+            right: 1rem;
+            top: .5rem;
+
+
+            border: 1px solid #cfcece;
+            overflow: hidden;
+        }
+
+        &_prev {
+            padding: 1rem;
+            border-right: .5px solid $color-border-next-prev-tweet;
+        }
+
+        &_next {
+            padding: 1rem;
+            border-left: .5px solid $color-border-next-prev-tweet;
+        }
+    }
+
+
 }
+
+
+
+//175 lignes

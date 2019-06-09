@@ -7,146 +7,154 @@ $color-item: #a8a9ad;
 
 
 .footer {
-  padding: 1.5rem;
+    padding: 1.5rem;
 
-  text-transform: capitalize;
+    text-transform: capitalize;
 
-	background: $color-background;
-	color: $color-item;
+    background: $color-background;
+    color: $color-item;
 
-  clear: both;
+    clear: both;
 
-  &-wrapper{
-    overflow: hidden;
-    width: 100%;
-    max-width: 1600px;
-    padding: 0 .625rem;
-    margin: 0 auto;
-  }
+    &-wrapper {
+        overflow: hidden;
+        width: 100%;
+        max-width: 1600px;
+        padding: 0 .625rem;
+        margin: 0 auto;
+    }
 }
 
 
 
-.footer-grid{
-  $grid-temp-0 : 1fr;
-  $grid-temp-1: 1fr 1fr; $grid-size-1: $small-width;
-  $grid-temp-2: 2fr repeat(3, 1fr); $grid-size-2: $medium-width;
-  @include grid($grid-temp-0,
-                $grid-temp-1,$grid-size-1,
-                $grid-temp-2,$grid-size-2
-                );
+.footer-grid {
+    $grid-temp-0: 1fr;
+    $grid-temp-1: 1fr 1fr;
+    $grid-size-1: $small-width;
+    $grid-temp-2: 2fr repeat(3, 1fr);
+    $grid-size-2: $medium-width;
+    @include grid($grid-temp-0,
+    $grid-temp-1, $grid-size-1,
+    $grid-temp-2, $grid-size-2);
 
-  grid-gap: 1rem;
+    grid-gap: 1rem;
 }
 
 
 
 
 input {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
 }
 
-.footer_liste{
-  width: 100%;
-  overflow: hidden;
-
-  letter-spacing: .12rem;
-
-  &_label {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-
-    font-size: 1.5rem;
-    line-height: 1.8rem;
-    font-weight: bold;
-
-    color: $color-label;
-
-    cursor: pointer;
-    @include _breakpoint-min($small-width) {
-      /* on bloque le ckeck quand on est sur un écran > $small-width */
-      pointer-events: none
-    }
-    &:hover {
-      color : darken($color-label, 10%);
-    }
-
-    &::after {
-      /* on affiche l'accordion seulement sur les écran < $small-width */
-      @include _breakpoint-max($small-width) {
-      content: "\276F";
-      width: 1rem;
-      height: 1rem;
-
-      text-align: center;
-      transition: all .35s;
-      }
-
-
-    }
-  }
-  &_content {
+.footer_liste {
+    width: 100%;
     overflow: hidden;
-    max-height: 0;
-    padding: 0 1rem;
 
-    color: white;
+    letter-spacing: .12rem;
 
-    transition: all .35s;
+    &_label {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
 
-    li{
-      padding-bottom: .6rem;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        font-weight: bold;
 
-      font-size: 1rem;
-      line-height: 1.2rem;
+        color: $color-label;
 
-      color: $color-item;
-      list-style: none;
+        cursor: pointer;
+
+        @include _breakpoint-min($small-width) {
+            /* on bloque le ckeck quand on est sur un écran > $small-width */
+            pointer-events: none
+        }
+
+        &:hover {
+            color: darken($color-label, 10%);
+        }
+
+        &::after {
+
+            /* on affiche l'accordion seulement sur les écran < $small-width */
+            @include _breakpoint-max($small-width) {
+                content: "\276F";
+                width: 1rem;
+                height: 1rem;
+
+                text-align: center;
+                transition: all .35s;
+            }
+
+
+        }
     }
-    a{
-      text-decoration: none;
 
-      color: $color-item;
+    &_content {
+        overflow: hidden;
+        max-height: 0;
+        padding: 0 1rem;
+
+        color: white;
+
+        transition: all .35s;
+
+        li {
+            padding-bottom: .6rem;
+
+            font-size: 1rem;
+            line-height: 1.2rem;
+
+            color: $color-item;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+
+            color: $color-item;
+        }
     }
-  }
 }
 
 // :checked
 input:checked {
-   /* le  footer_liste_label qui est juste après le input:checked*/
-  + .footer_liste_label {
-    color: darken($color-label, 10%);
-    &::after {
-      transform: rotate(90deg);
+
+    /* le  footer_liste_label qui est juste après le input:checked*/
+    +.footer_liste_label {
+        color: darken($color-label, 10%);
+
+        &::after {
+            transform: rotate(90deg);
+        }
     }
-  }
-  /* tous les footer_liste_content qui se retrouvent après un input:checked*/
-  ~ .footer_liste_content {
-    background-color: darken($color-background,  10%);
-    max-height: 100vh;
-    padding: 1rem;
-  }
+
+    /* tous les footer_liste_content qui se retrouvent après un input:checked*/
+    ~.footer_liste_content {
+        background-color: darken($color-background, 10%);
+        max-height: 100vh;
+        padding: 1rem;
+    }
 }
 
 /* ce contenu ne sera pas caché à partir de $small-width */
 .footer_liste_content {
-  @include _breakpoint-min($small-width) {
-    background-color: $color-background;
-    max-height: 100vh;
-    padding: 1rem;
-  }
+    @include _breakpoint-min($small-width) {
+        background-color: $color-background;
+        max-height: 100vh;
+        padding: 1rem;
+    }
 }
 
 
-.fab{
-  margin-right: 1rem;
+.fab {
+    margin-right: 1rem;
 }
 
-.footer_copyright{
-  grid-column: 1 /-1;
-  text-align: center;
+.footer_copyright {
+    grid-column: 1 /-1;
+    text-align: center;
 }
-

@@ -1,12 +1,12 @@
 @import 'mixins';
-@import 'global';
-$small-width: 900;
-$medium-width: 1100;
+@import 'extends';
+$sm-width: 900;
+$md-width: 1100;
 
 .apropos {
     $grid-temp-0: 1fr;
     $grid-temp-1: 1fr 1fr;
-    $grid-size-1: $small-width;
+    $grid-size-1: $sm-width;
     @include grid($grid-temp-0, $grid-temp-1, $grid-size-1);
     grid-gap: .7rem;
     padding: 1rem;
@@ -16,11 +16,11 @@ $medium-width: 1100;
     &_text {
         padding: 3rem 2rem;
 
-        @include _breakpoint-min($small-width) {
+        @include _breakpoint-min($sm-width) {
             padding: 3rem 2rem 1rem 2rem;
         }
 
-        @include _breakpoint-min($medium-width) {
+        @include _breakpoint-min($md-width) {
             padding: 3rem 6rem 1rem 6rem;
         }
 
@@ -45,7 +45,7 @@ $medium-width: 1100;
     &_img-content {
         position: relative;
 
-        @include _breakpoint-max($small-width + 1) {
+        @include _breakpoint-max($sm-width + 1) {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-gap: .8rem;
@@ -54,7 +54,7 @@ $medium-width: 1100;
         & img {
             max-width: 100%;
 
-            @include _breakpoint-min($small-width) {
+            @include _breakpoint-min($sm-width) {
                 max-width: 250px;
             }
 
@@ -63,7 +63,7 @@ $medium-width: 1100;
         &_img1 {
             opacity: .5;
 
-            @include _breakpoint-max($small-width - 1) {
+            @include _breakpoint-max($sm-width - 1) {
                 opacity: 1;
             }
         }
@@ -72,7 +72,7 @@ $medium-width: 1100;
             & img {
                 transform: translate(-40%, -40%);
 
-                @include _breakpoint-max($small-width - 1) {
+                @include _breakpoint-max($sm-width - 1) {
                     transform: translate(0%, 0%);
                 }
             }

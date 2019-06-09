@@ -62,7 +62,6 @@
 
 
 @mixin horizontal-gradient($from , $stop: 100%) {
-  /* fallback/image non-cover color */
   background-color: $from;
   $from-transp: rgba($from , .9 );
   $to-transp: rgba($from , .2 );
@@ -71,7 +70,6 @@
 }
 
 @mixin image-horizontal-gradient($url, $from , $stop: 100%) {
-  /* fallback/image non-cover color */
   background-color: $from;
   $color-transp: rgba($from , .2 );
 
@@ -93,13 +91,14 @@
 
 
 @mixin _triangle{
+  content: '';
+  position: absolute;
+
   width: 0;
   height: 0;
   border-left: 18px solid transparent;
   border-right: 18px solid transparent;
   border-bottom: 30px solid white;
-  content: '';
-  position: absolute;
 
   transform: rotate(-90deg);
 }

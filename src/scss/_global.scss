@@ -1,7 +1,4 @@
-$color-btn-danger: #dc3545;
-// $color-btn-white : #fff;
-$color-btn-white : #fafafa;
-$color-fa-heart-green: #7cae74;
+@import 'mixins';
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -19,43 +16,16 @@ html {
   margin: 0;
   padding: 0;
   font-size: 16px;
-}
+  /* les media query ici pour le HTML servent plus à utiliser l'unité de font-size rem au lieu de px
+  pour nous aider à faire moins de changement de font-size lorsqu'on change d'écran  */
+  @include _breakpoint-max(499) {font-size: 11px;}
+  @include _breakpoint-min(500) {font-size: 12px;}
+  @include _breakpoint-min(624) {font-size: 12.5px;}
+  @include _breakpoint-min(702) {font-size: 13px;}
+  @include _breakpoint-min(780) {font-size: 14px;}
+  @include _breakpoint-min(858) {font-size: 15px;}
 
-/* les media query ici pour le HTML servent plus à utiliser l'unité de font-size rem au lieu de px
-pour nous aider à faire moins de changement de font-size lorsqu'on change d'écran  */
-
-@media (max-width: 499px) {
-  html {
-      font-size: 11px;
-  }
 }
-@media (min-width: 500px) {
-  html {
-      font-size: 12px;
-  }
-}
-@media (min-width: 624px) {
-  html {
-      font-size: 12.5px;
-  }
-}
-
-@media (min-width: 702px) {
-  html {
-      font-size: 13px;
-  }
-}
-@media (min-width: 780px) {
-  html {
-      font-size: 14px;
-  }
-}
-@media (min-width: 858px) {
-  html {
-      font-size: 15px;
-  }
-}
-
 
 body {
   -webkit-overflow-scrolling: touch;
@@ -68,7 +38,6 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  /* font-family: Helvetica Neue, Helvetica, sans-serif; */
   font-weight: 300;
   line-height: 1rem;
   height: auto;
@@ -113,6 +82,8 @@ button, input, optgroup, select, textarea {
 }
 
 
+
+/*pour que l'image s'adapte au container */
 picture img {
   object-fit: contain;
   text-indent: -9999px;
@@ -124,32 +95,10 @@ picture img {
   height: auto;
 }
 
-.btn {
-  display: inline-block;
-  font-weight: 400;
-  color: #212529;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border: 1px solid transparent;
-  padding: .575rem .85rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 2.25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  cursor: pointer;
-  text-transform: capitalize;
-}
 
 
 
-
-
-
+/* changer la valeur par defaut des boutons next et prev du plugin SlickJS */
 .slick-prev:before, .slick-next:before{
   font-size: 3rem;
   z-index: 100;
@@ -165,91 +114,5 @@ picture img {
   left: 4rem !important;
 }
 
-// articles-title
 
-
-
-// extend
-
-%btn {
-  display: inline-block;
-  font-weight: 400;
-  color: #212529;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border: 1px solid transparent;
-  padding: .575rem .85rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 2.25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  cursor: pointer;
-  text-transform: capitalize;
-}
-
-
-%btn-danger{
-  @extend %btn;
-  background-color: $color-btn-danger;
-  border-color: $color-btn-danger;
-  color: #fff;
-  &:hover{
-    background-color : darken($color-btn-danger , 10%);
-    border-color : darken($color-btn-danger , 10%);
-  }
-}
-%btn-white{
-  @extend %btn;
-  color: #000;
-  background-color: rgba($color-btn-white, .6);
-  border-color:  rgba($color-btn-white, .6);
-  &:hover{
-
-    background-color : lighten($color-btn-white , 10%);
-    border-color : lighten($color-btn-white , 10%);
-  }
-}
-
-
-
-%title-article{
-      font-size: 3rem;
-      margin: 0 auto;
-      display: block;
-      font-weight: bold;
-      line-height: 3rem;
-      text-transform: uppercase;
-      padding: 2rem 0;
-}
-
-
-%icon-heart{
-  padding: 0.7rem;
-  text-align: center;
-  font-size: 1.2rem;
-  background-color: $color-btn-white;
-  color: $color-fa-heart-green;
-  box-shadow: 0px 6px 12px 0px #333;
-  border-radius: 50%;
-  cursor: pointer;
-  &:hover{
-    background-color : lighten($color-btn-white , 10%);
-    border-color : lighten($color-btn-white , 10%);
-    color: red;
-  }
-}
-
-
-%flex50{
-  float: left;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 50%;
-}
 

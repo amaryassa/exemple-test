@@ -1,0 +1,14 @@
+{
+  "slides" : [
+    {"img": "/assets/images/rs/insta1.jpg"},
+    {"img": "/assets/images/rs/insta2.jpg"},
+    {"img": "/assets/images/rs/insta3.jpg"},
+    {"img": "/assets/images/rs/insta4.jpg"},
+    {"img": "/assets/images/rs/insta5.jpg"},
+    {"img": "/assets/images/rs/insta6.jpg"},
+    {"img": "/assets/images/rs/insta7.jpg"},
+    {"img": "/assets/images/rs/insta8.jpg"},
+    {"img": "/assets/images/rs/insta9.jpg"}
+  ],
+  "rs_big_image" : "/assets/images/rs/rs_big_img.jpg"
+}
