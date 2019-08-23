@@ -1,5 +1,5 @@
 # DevoteamFactoryTest
-## Lien ===> [Demo](https://amaryassa-devoteam-test.netlify.com/)
+## [Demo](https://amaryassa-devoteam-test.netlify.com/)
 
 ## objectif test : recréer le design  de cette [landing Page](https://www.behance.net/gallery/70263365/Bicycle-products-Website)
 
